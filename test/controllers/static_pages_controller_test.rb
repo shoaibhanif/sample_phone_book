@@ -5,9 +5,15 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   	@b_title = "ROR Sample Phone Book"
   end
   test "should get home" do
-    get static_pages_home_url
+    get root_path
     assert_response :success
-    assert_select "title", "Home | #{@b_title}"
+    assert_select "title", "Home | ROR Sample Phone Book"
+  end
+
+  test "should get contact" do
+    get contact_path
+    assert_response :success
+    assert_select "title", "Contact | ROR Sample Phone Book"
   end
 
 end

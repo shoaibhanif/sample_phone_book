@@ -5,9 +5,14 @@
     <title><%= yield(:title) %></title>
   </head>
   <body>
-    <h1>PHONE BOOK</h1>
-	<p>
-	  This is the home page for the Ruby on Rails Tutorial the Phone Book application.
-	</p>
+  	<div class="center jumbotron">
+  		<%= image_tag("rails.svg", alt: "Rails logo", width: "200")%>
+  		<h1>Welcome to the Phone Book</h1>
+
+		<p>
+		  This is the home page for the Ruby on Rails the Phone Book application.
+		</p>
+		 <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  	</div>
   </body>
 </html>
