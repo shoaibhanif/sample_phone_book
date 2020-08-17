@@ -29,3 +29,6 @@
 
 /public/assets
 .byebug_history
+
+# Ignore db test files.
+db/test.*
