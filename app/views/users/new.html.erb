@@ -1,0 +1,26 @@
+<% provide(:title, "Add New User")%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+  </head>
+  <body>
+  	<div class="center jumbotron">
+  		
+      <%= form_with model: @user, class: "nifty_form" do |f| %>
+        <%= f.label :username, "Username:" %>
+        <%= f.text_field :username, placeholder: "Enter the username", required: true %>
+        <%= f.label :email, "Email:" %>
+        <%= f.text_field :email, placeholder: "Enter the email", required: true  %>
+        <%= f.label :dob, "Date of Birth:" %>
+        <%= f.date_select :dob, start_year: 1900, end_year: 2020, prompt: { day: 'Choose day', month: 'Choose month', year: 'Choose year' }, placeholder: "Enter the username", required: true  %>
+        <%= f.label :address, "Address:" %>
+        <%= f.text_area :address, size: "60x12" %>
+        <%= f.label :phone, "Phone:" %>
+        <%= f.text_field :phone, placeholder: "Enter the username", required: true %>
+        <%= f.submit "CREATE", class: "btn btn-primary" %>
+      <% end %>
+		
+  	</div>
+  </body>
+</html>

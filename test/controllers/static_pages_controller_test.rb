@@ -16,4 +16,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Contact | ROR Sample Phone Book"
   end
 
+  test "should get index" do
+    get users_path
+    assert_response :success
+    assert_select "title", "User | ROR Sample Phone Book"
+  end
+
 end

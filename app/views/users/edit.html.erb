@@ -1,0 +1,26 @@
+<% provide(:title, "Edit Users")%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+  </head>
+  <body>
+  	
+    <div class="center">
+  		<h1>User EDIT FORM</h1>
+		<%= form_with model: @user do |form|%>
+		    <%= form.label :username, "Username:" %>
+		    <%= form.text_field :username, placeholder: "Enter the username", required: true %>
+		    <%= form.label :email, "Email:" %>
+		    <%= form.text_field :email, placeholder: "Enter the username", required: true  %>
+		    <%= form.label :dob, "Date of Birth:" %>
+		    <%= form.date_select :dob, start_year: 1900, end_year: 2020, prompt: { day: 'Choose day', month: 'Choose month', year: 'Choose year' }, placeholder: "Enter the username", required: true  %>
+		    <%= form.label :address, "Address:" %>
+		    <%= form.text_area :address, size: "60x12" %>
+		    <%= form.label :phone, "Phone:" %>
+		    <%= form.text_field :phone, placeholder: "Enter the username", required: true %>
+		    <%= form.submit "UPDATE", class: "btn btn-lg btn-primary" %>
+		<% end %>
+  	</div>
+  </body>
+</html>

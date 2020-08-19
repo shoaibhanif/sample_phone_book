@@ -1,0 +1,42 @@
+<% provide(:title, "User Form")%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+  </head>
+  <body>
+  	
+    <div class="center">
+      <h2><%= link_to "ADD NEW USER", new_user_path, class: "btn btn-primary" %></h2>
+  		<h1>USERS LIST</h1>
+      <div class="col-sm-12">
+        <table class="table table-striped my-0 dataTable", role="grid">
+          <thead>
+          <tr>
+            <th>USERNAME</th>
+            <th>EMAIL</th>
+            <th>DATE OF BIRTH</th>
+            <th>ADDRESS</th>
+            <th>PHONE</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>  
+          </thead>
+          <tbody>
+            <% @user.each do |r| %>
+            <tr>
+              <td><%= r.username %></td>
+              <td><%= r.email %></td>
+              <td><%= r.dob %></td>
+              <td><%= r.address %></td>
+              <td><%= r.phone %></td>
+              <td><%= link_to "EDIT", edit_user_path(r.id) %></td>
+              <td><%= link_to 'Destroy', user_path(r.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+        </tbody>      
+      </table>
+      </div>
+  	</div>
+  </body>
+</html>
